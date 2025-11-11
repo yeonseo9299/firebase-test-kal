@@ -1,0 +1,492 @@
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  /* 배경색을 더욱 부드러운 회색으로 변경 */
+  background-color: #f7f9fc;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  /* 폰트 지정 유지 */
+  font-family: "Pretendard", sans-serif;
+}
+
+/* 헤더 */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* 상단 여백을 살짝 늘려 공간감 확보 */
+  margin-bottom: 30px;
+}
+
+/* ✨ 메인 로고 스타일 변경 (아이콘 및 특색 추가) ✨ */
+.main-logo {
+  font-size: 32px;
+  /* 로고 크기 살짝 키움 */
+  font-weight: 800;
+  /* 더 굵게 */
+  color: #333;
+  letter-spacing: -0.5px;
+  /* 글자 간격 조정 */
+  display: flex;
+  align-items: center;
+}
+
+/* 로고 앞 아이콘 스타일링 (Link/Chain 아이콘처럼 보이게) */
+.main-logo::before {
+  content: "🔗";
+  /* 체인 아이콘 유니코드 사용 */
+  font-size: 28px;
+  margin-right: 8px;
+  /* 로고 색상과 어울리는 파란색 계열로 변경 */
+  color: #007bff;
+  /* 약간의 그림자로 입체감 부여 */
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+/* ✨ 메인 로고 스타일 변경 끝 ✨ */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 검색창 */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* 검색창 주변에 그림자를 주어 입체감 부여 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  /* 모서리를 둥글게 */
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* 포커스 시 그림자 강조 */
+}
+
+.search-box input {
+  /* 패딩 조정 */
+  padding: 8px 35px 8px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  /* 테두리를 밝게 변경 */
+  font-size: 15px;
+  width: 200px;
+  /* 너비 살짝 증가 */
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #007bff;
+  /* 포커스 시 파란색 테두리 */
+  outline: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: none;
+  color: #a0a0a0;
+  /* 색상 변경 */
+  font-size: 18px;
+  /* 크기 키움 */
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.search-clear:hover {
+  color: #555;
+}
+
+/* 프리미엄 버튼 */
+.premium-btn {
+  /* 색상 변경: 보라색 계열로 유지하되, 더 세련된 색상으로 */
+  background-color: #7b68ee;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(123, 104, 238, 0.3);
+}
+
+.premium-btn:hover {
+  background-color: #6a5acd;
+  transform: translateY(-1px);
+}
+
+/* 🔥 로그아웃 버튼 스타일링 */
+.logout-btn {
+  /* 깔끔하고 경고의 의미를 담은 디자인 */
+  background-color: #fff;
+  color: #dc3545;
+  /* 빨간색 계열로 경고/종료 느낌 부여 */
+  border: 1px solid #dc3545;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* 아이콘과 텍스트 정렬 */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* 아이콘과 텍스트 사이 간격 */
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.1);
+}
+
+.logout-btn:hover {
+  background-color: #dc3545;
+  /* 호버 시 색 반전 */
+  color: white;
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+  transform: translateY(-1px);
+}
+
+.logout-icon {
+  /* SVG 아이콘 색상 설정 */
+  stroke: #dc3545;
+  /* 기본 상태의 아이콘 색상 */
+  width: 18px;
+  height: 18px;
+}
+
+.logout-btn:hover .logout-icon {
+  /* 호버 시 아이콘 색상도 반전 */
+  stroke: white;
+}
+
+/* 🔥 로그아웃 버튼 스타일링 끝 */
+
+
+/* 필터 버튼 */
+.filter-buttons {
+  margin-bottom: 25px;
+  /* 여백 조정 */
+}
+
+.filter {
+  /* 테두리를 없애고 부드러운 그림자로 대체 */
+  border: none;
+  background-color: #fff;
+  padding: 8px 18px;
+  margin-right: 10px;
+  border-radius: 20px;
+  /* 필 모양으로 둥글게 */
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  /* 부드러운 그림자 */
+}
+
+.filter:hover:not(.active) {
+  background-color: #eef2f8;
+  /* 호버 시 배경색 변경 */
+  color: #333;
+}
+
+.filter.active {
+  /* 활성 버튼 색상 변경 및 강조 */
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* 링크 카드 그리드 */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  /* 최소 너비 증가 */
+  gap: 20px;
+  /* 간격 살짝 넓힘 */
+  position: relative;
+}
+
+.link-card {
+  background-color: #fff;
+  border: none;
+  /* 테두리 제거 */
+  border-radius: 16px;
+  /* 모서리를 더욱 둥글게 */
+  padding: 15px;
+  /* 내부 여백 조정 */
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  /* 눈에 띄는 그림자로 콘텐츠 부각 */
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  /* 호버 시 더 많이 떠오르게 */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  /* 호버 시 그림자 강조 */
+}
+
+.img-box {
+  width: 100%;
+  height: 120px;
+  /* 높이 증가 */
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  /* 이미지 박스 모서리 둥글게 */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-image {
+  font-size: 40px;
+  /* 아이콘 크기 증가 */
+  color: #a0a0a0;
+}
+
+.link-info {
+  margin-top: 10px;
+  /* 여백 조정 */
+  cursor: pointer;
+}
+
+.link-title {
+  font-weight: 700;
+  font-size: 16px;
+  /* 폰트 크기 살짝 키움 */
+  margin-bottom: 2px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-desc {
+  font-size: 13px;
+  color: #777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 카드 액션 버튼들 */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* 🌟 즐겨찾기 버튼 스타일 (눈에 띄게 강조) 🌟 */
+.star-fixed {
+  position: absolute;
+  top: -10px;
+  /* 카드 위쪽으로 더 빼기 */
+  right: -10px;
+  /* 카드 오른쪽으로 더 빼기 */
+  background: #fff;
+  border: 2px solid #fff;
+  /* 흰색 테두리 추가 */
+  font-size: 32px;
+  /* 더 크게 */
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.3s;
+  padding: 2px;
+  line-height: 1;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  /* 그림자 강조 */
+  z-index: 10;
+}
+
+.star-fixed.active {
+  color: #ffd700;
+  /* 황금색 */
+  transform: scale(1.15) rotate(10deg);
+  /* 회전 효과 추가 */
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.9));
+}
+
+.star-fixed:hover {
+  transform: scale(1.1);
+  color: #ffeb3b;
+}
+
+/* 삭제 버튼 */
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  /* 크기 키움 */
+  cursor: pointer;
+  color: #999;
+  /* 기본 색상을 회색으로 변경 */
+  transition: color 0.2s, transform 0.2s ease;
+  margin-left: 8px;
+}
+
+.delete-btn:hover {
+  color: #e74c3c;
+  /* 호버 시 빨간색으로 변경 */
+  transform: scale(1.2);
+}
+
+
+
+
+/* 결과 없음 */
+.no-result {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 60px;
+  color: #999;
+  font-size: 18px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px dashed #e0e0e0;
+  /* 점선 테두리를 더 세련되게 */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* 🔥 삭제 모달 스타일 */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* 배경을 조금 더 어둡게 */
+  backdrop-filter: blur(4px);
+  /* 블러 효과 강화 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  /* 모서리 둥글게 */
+  padding: 30px 40px;
+  /* 패딩 증가 */
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* 그림자 강조 */
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #ccc;
+  transform: translateY(-1px);
+}
+
+.confirm-btn {
+  background: #dc3545;
+  /* 경고를 의미하는 붉은색 */
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+/* ➕ 항상 보이는 링크 추가 버튼 */
+.add-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #007bff;
+  color: black;
+  font-size: 36px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  transition: all 0.25s ease;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  /* ✅ 글자 숨김 스타일 제거 (중요!) */
+  text-indent: 0;
+  overflow: visible;
+  visibility: visible;
+  opacity: 1;
+}
+
+.add-btn:hover {
+  transform: scale(1.1);
+  background-color: #0066d6;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5);
+}
+
+.add-btn:active {
+  transform: scale(0.95);
+}
+
+
+
+
+
+

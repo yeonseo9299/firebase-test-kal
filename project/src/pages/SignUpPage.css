@@ -1,0 +1,117 @@
+/* SignUpPage.css */
+
+/* --- 기존 코드 (유지) --- */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.signup-container h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  border: 1px solid #ccc;
+  padding: 25px 20px;
+  background-color: #fff;
+}
+
+.signup-container label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.signup-container input {
+  height: 34px;
+  border: 1px solid #ccc;
+  margin-bottom: 14px;
+  padding: 5px 8px;
+  font-size: 14px;
+}
+
+.signup-container button {
+  height: 38px;
+  background-color: #999999;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+.signup-container button:hover {
+  background-color: #7a7a7a;
+}
+
+.forgot-link {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* --- 랜딩 페이지에 맞춘 추가/수정 스타일 --- */
+.signup-container {
+  background-color: #f7f9fc;
+}
+
+.signup-container form {
+  width: 320px;
+  padding: 30px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.signup-container label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.signup-container input {
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  padding: 5px 12px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+.signup-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.signup-container button {
+  background-color: #28a745;
+  height: 42px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.signup-container button:hover {
+  background-color: #1e7e34;
+  transform: translateY(-1px);
+}
+
+/* ✅ 추가된 비밀번호 확인 입력창 시각적 구분 */
+.signup-container input[type="password"]:last-of-type {
+  border-color: #d6d6d6;
+}

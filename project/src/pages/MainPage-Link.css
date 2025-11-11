@@ -1,0 +1,193 @@
+.link-add-container {
+  /* 메인 페이지 배경색과 통일 */
+  background-color: #f7f9fc;
+  min-height: 100vh;
+  padding: 50px 20px;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 컨테이너 최대 너비를 지정하여 중앙에 배치 */
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 뒤로가기 버튼 */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* 버튼 스타일 개선: 부드러운 원형 버튼 */
+  font-size: 24px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* 포커스 시 아웃라인 스타일 추가 */
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+}
+
+.back-btn:hover {
+  background-color: #eef2f8;
+  color: #007bff;
+}
+
+/* 제목 */
+.add-page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  /* 제목 아래에 미세한 구분선 추가 */
+  padding-bottom: 5px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* 메시지 박스 */
+.status-message {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  animation: fadeInOut 3s forwards;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+
+/* 이미지 미리보기 박스 강조 */
+.image-preview-box {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  /* 그림자로 콘텐츠 부각 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #eef2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 부드러운 전환 효과 추가 */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.image-preview-box:hover {
+  /* 호버 시 그림자 살짝 강조 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 박스에 꽉 차도록 */
+}
+
+.no-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+.no-image-placeholder svg {
+  color: #a0a0a0;
+  margin-bottom: 8px;
+  /* 아이콘 크기 키우기 */
+  width: 55px;
+  height: 55px;
+}
+
+/* 입력 필드 스타일 */
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.link-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 15px;
+  /* 세련된 입력 필드 스타일 */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 설정 */
+}
+
+.link-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* 저장 버튼 */
+.save-btn {
+  /* 메인 페이지의 주요 버튼 색상과 통일 (파란색 계열) */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  /* 텍스트 섀도우 추가로 버튼 글자 강조 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+}
+
+.save-btn svg {
+  margin-right: 8px;
+}

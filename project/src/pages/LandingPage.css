@@ -1,0 +1,178 @@
+/* 폰트 및 기본 설정 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  overflow-x: hidden;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* 배경: 부드러운 그라데이션 추가 */
+  background: linear-gradient(135deg, #eef5ff 0%, #f7f9fc 100%);
+  align-items: center;
+  padding-top: 80px;
+  /* 헤더 공간 확보 */
+}
+
+/* 헤더 스타일링 */
+.landing-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* 반투명 배경 */
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #007bff;
+  letter-spacing: -0.5px;
+}
+
+.landing-header>div {
+  display: flex;
+  gap: 10px;
+}
+
+/* 버튼 공통 스타일 */
+.landing-header button {
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  background-color: transparent;
+  color: #555;
+  border: 1px solid #d0d0d0;
+}
+
+.login-btn:hover {
+  background-color: #e8f0fe;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+/* 회원가입 버튼 (메인 액션 버튼) */
+.signup-btn {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* 메인 섹션 */
+.landing-main {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-main h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #1a202c;
+}
+
+/* 강조 텍스트 스타일 */
+.landing-main h1 strong {
+  color: #007bff;
+}
+
+.landing-main p {
+  color: #52667b;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* 시작하기 버튼 (대형 CTA) */
+.start-btn {
+  background-color: #2ecc71;
+  /* 눈에 띄는 초록색 */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.5);
+  margin-top: 10px;
+}
+
+.start-btn:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(46, 204, 113, 0.6);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 10px 20px;
+  }
+
+  .header-logo {
+    font-size: 20px;
+  }
+
+  .landing-header button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .landing-main h1 {
+    font-size: 40px;
+  }
+
+  .landing-main p {
+    font-size: 16px;
+  }
+
+  .start-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .desktop-break {
+    display: none;
+    /* 모바일에서 줄바꿈 제거 */
+  }
+}
